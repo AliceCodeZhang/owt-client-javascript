@@ -39,6 +39,8 @@ pipeline {
                 }
             }
             steps {
+                sh "echo start test"
+                
                 sh "python ${env.jsCiScriptPath}/runTest.py --mode ci --source-path ${env.jsSourcePath} \
                 --browsers chrome --mode ci --owner open-webrtc-toolkit --repo owt-client-javascript \
                 --git-branch ${GIT_BRANCH} --github-script ${env.jsP2PTestGithubScriptPath}"
